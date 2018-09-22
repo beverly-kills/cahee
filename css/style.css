@@ -69,23 +69,28 @@
 }
 
 .menu__nav{
+	justify-content: space-between;
+    width: 40vw;
 	list-style: none;
-	padding: 0;
 }
 
-.menu__element{
-	display: inline-block;
+.menu__trigger{
+	display: none;
+	text-decoration:none;
+	color: #262626;
 	text-transform: uppercase;
 	font: 700 16px/25px 'Raleway', sans-serif;
 }
 
-.menu__element:not(:last-child){
-	margin-right: 33px;
+.menu__element {
+	display: inline-block;
 }
 
 .menu__link{
 	text-decoration:none;
 	color: #262626;
+	text-transform: uppercase;
+	font: 700 16px/25px 'Raleway', sans-serif;
 }
 
 .menu__link:before{
@@ -184,31 +189,32 @@
 }
 
 .service__item{
-	max-width: 400px;
-	height: 100px;
-	background-color: #ffffff;
-	box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    height: 100px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
-.service__name{
-	display: inline-block;
-	width: calc(100% - 101px);
-	height: 100%;
-	vertical-align: middle;
-	color: #262626;
-	font: 700 20px/27px 'Raleway', sans-serif;
-	text-align: center;
+.service__name {
+    width: 75%;
+    color: #262626;
+    font: 700 20px/27px 'Raleway', sans-serif;
+    text-align: center;
 }
 
 .service__item:not(:last-child){
 	margin-bottom: 20px;
 }
 
-.service__icon{
-	display: inline-block;
-	/*width: 100px;*/
-	height: 100px;
-	border-left: 1px solid #9D9D9D;
+.service__icon {
+    border-left: 1px solid #9D9D9D;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .service__icon--cart{
@@ -222,9 +228,8 @@
 }
 
 .service__icon--planet{
-	/*width: 53px; height: 53px;
-	background: url(../img/services_sprites.png) -84px -10px;*/
-	background: url(../img/delivery.svg) 50% no-repeat;
+	width: 53px; height: 53px;
+	background: url(../img/services_sprites.png) -84px -10px;
 }
 
 .service__icon--carrot{
@@ -472,4 +477,27 @@
 
 .footer__text--pink{
 	color:#ff2b58;
+}
+
+@media screen and (max-width:910px){
+	.menu__nav{
+		display: none;
+		flex-direction: column;
+	}
+
+	.menu__trigger{
+		display: block;
+		align-self: flex-end;
+	}
+
+	.menu__element {
+		display: block;
+		margin-right: 10px;
+		text-align: right;
+		background-color:  rgba(85, 133, 162, 0.5);
+	}
+
+	.menu__element:hover{
+		background-color: #ff6033;
+	}
 }
